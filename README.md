@@ -32,7 +32,7 @@ It depends on the IP address, port, and domain name (if any) of the system you a
 
 The module **test-endpoint-a** is intended to be started on `port 8081`.
 
-The configuration I used was to host this app on http://localhost:8080
+The configuration I used was to host this app on http://localhost:8081
 
 This is reflected in the application.yaml of `./test-endpoint-a/src/main/resources/application.yaml`
 
