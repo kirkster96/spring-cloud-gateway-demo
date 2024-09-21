@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<button onclick="makeRequest()">Get Data - Service A</button>
+
+<p id="output"></p>
+
+<script>
+    function makeRequest() {
+        fetch('/a/greeting', {
+            method: 'GET',
+        })
+            .then(response => response.json())
+            .then(data => {
+                // Assuming the response is a simple string
+                console.log(data)
+                document.getElementById('output').textContent = data.status;
+            })
+            .catch((error) => {
+                console.error('Error:', error);
+            });
+    }
+</script>
+
+</body>
+</html>

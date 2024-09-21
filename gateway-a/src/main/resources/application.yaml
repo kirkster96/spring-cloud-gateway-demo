@@ -1,0 +1,17 @@
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: test-endpoint-a
+          uri: http://localhost:8081
+          predicates:
+            - Method=GET,POST
+            - Path=/a/**
+          filters:
+            - RewritePath=/a/?(?<segment>.*), /$\{segment}
+
+
+logging:
+  level:
+    org.springframework.web: TRACE
+    org.springframework.cloud: TRACE
